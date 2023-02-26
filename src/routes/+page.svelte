@@ -1,19 +1,26 @@
 <script lang="ts">
   import { Search } from "svelte-ionicons";
+  import Fuse from "fuse.js";
   import Dropdown from "$lib/Dropdown.svelte";
   import type { PageData } from "./$types";
-  import { writable } from "svelte/store";
 
-  let selected: string | null;
   export let data: PageData;
-  $: countries = data.countries
-    .filter((country) => !selected || country.region === selected)
-    .filter((country) =>
-      country.name.common.toLowerCase().includes($search.toLowerCase())
-    );
-  let regions = [...new Set(data.countries.map((country) => country.region))];
 
-  const search = writable("");
+  const fuse = new Fuse(data.countries, {
+    keys: [
+      "name.common",
+      { name: "name.official", weight: 0.7 },
+      { name: "capital", weight: 0.5 },
+    ],
+  });
+  $: countries = (
+    search ? fuse.search(search).map((result) => result.item) : data.countries
+  ).filter((country) => !filterRegion || country.region === filterRegion);
+
+  const regions = [...new Set(data.countries.map((country) => country.region))];
+  let filterRegion: string | null;
+
+  let search = "";
 </script>
 
 <div class="flex justify-between mb-14">
@@ -27,7 +34,7 @@
       type="text"
       placeholder="Search for a country..."
       class="w-full h-full p-6 pl-2 rounded-r-md border-0 placeholder:text-light-input"
-      bind:value={$search}
+      bind:value={search}
     />
   </form>
   <Dropdown
@@ -36,10 +43,10 @@
     placeholder="Filter by Region"
     options={regions}
     let:option
-    bind:selected
+    bind:selected={filterRegion}
   >
     <div
-      class="px-8 py-1 hover:bg-light-input/5 {selected === option
+      class="px-8 py-1 hover:bg-light-input/5 {filterRegion === option
         ? 'bg-light-input/5'
         : ''}"
     >
