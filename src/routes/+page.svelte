@@ -9,8 +9,15 @@
   const fuse = new Fuse(data.countries, {
     keys: [
       "name.common",
-      { name: "name.official", weight: 0.7 },
-      { name: "capital", weight: 0.5 },
+      "name.official",
+      "capital",
+      {
+        name: "name.nativeName",
+        getFn: (obj) =>
+          Object.values(obj.name.nativeName)
+            .map(({ official, common }) => `${official} (${common})`)
+            .join(" "),
+      },
     ],
   });
   $: countries = (
