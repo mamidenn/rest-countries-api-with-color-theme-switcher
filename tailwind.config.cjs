@@ -21,6 +21,10 @@ const config = {
       normal: 600,
       bold: 800,
     },
+    boxShadow: {
+      md: "0 0 3px 1px rgb(0 0 0 / 0.1)",
+      lg: "0 1px 10px 0 rgb(0 0 0 / 0.05)",
+    },
     extend: {},
   },
 

@@ -17,15 +17,11 @@
   export let country: CountryDetail;
 </script>
 
-<div class="grid grid-rows-3 grid-cols-[2fr_1fr_1fr] gap-x-24 gap-y-6">
-  <img
-    class="row-span-3 place-self-stretch"
-    src={country.flags.svg}
-    alt={country.flags.alt}
-  />
-  <h1 class="col-span-2 self-center text-3xl font-bold">
+<div class="grid grid-cols-[2fr_1fr_1fr] gap-x-24 gap-y-6">
+  <img class="row-span-3" src={country.flags.svg} alt={country.flags.alt} />
+  <h2 class="col-span-2 text-3xl font-bold">
     {country.name.common}
-  </h1>
+  </h2>
   <dl>
     <div>
       <dt>Native Name</dt>
@@ -75,7 +71,7 @@
   {#if country.borders.length > 0}
     <div class="col-span-2 flex gap-4 items-center">
       <h2 class="whitespace-nowrap font-normal">Border Countries:</h2>
-      <ul class="flex flex-wrap gap-2">
+      <ul class="flex flex-wrap gap-3">
         {#each country.borders as border (border.cca3)}
           <li>
             <a class="button" href="/country/{border.cca3}/">

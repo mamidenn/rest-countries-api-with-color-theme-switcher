@@ -4,7 +4,7 @@
 </script>
 
 <header
-  class="flex justify-between px-16 py-6 shadow-md shadow-light-input/10 bg-light-element relative z-10"
+  class="flex justify-between px-16 py-6 shadow-[0_0_6px_3px] shadow-light-input/10 bg-light-element relative z-10"
 >
   <h1 class="text-xl font-bold">Where in the world?</h1>
   <button class="space-x-1">

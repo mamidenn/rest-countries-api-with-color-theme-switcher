@@ -20,7 +20,13 @@
 
 .button {
   @apply inline-block;
-  @apply px-8;
-  @apply py-1;
+  padding: 0.25em 1.5em;
+  border-radius: 0.25em;
   @apply shadow-md;
+  @apply bg-light-element;
+}
+
+.button:focus {
+  @apply ring-1;
+  @apply ring-blue;
 }
