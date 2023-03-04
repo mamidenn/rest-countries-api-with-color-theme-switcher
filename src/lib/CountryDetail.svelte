@@ -17,9 +17,9 @@
   export let country: CountryDetail;
 </script>
 
-<div class="grid grid-cols-[2fr_1fr_1fr] gap-x-24 gap-y-6">
+<div class="grid sm:grid-cols-[2fr_1fr_1fr] gap-x-24 gap-y-6">
   <img class="row-span-3" src={country.flags.svg} alt={country.flags.alt} />
-  <h2 class="col-span-2 text-3xl font-bold">
+  <h2 class="sm:col-span-2 text-3xl font-bold">
     {country.name.common}
   </h2>
   <dl>
@@ -69,7 +69,7 @@
     </div>
   </dl>
   {#if country.borders.length > 0}
-    <div class="col-span-2 flex gap-4 items-center">
+    <div class="sm:col-span-2 flex sm:flex-row flex-col gap-4 sm:items-center">
       <h2 class="whitespace-nowrap font-normal">Border Countries:</h2>
       <ul class="flex flex-wrap gap-3">
         {#each country.borders as border (border.cca3)}

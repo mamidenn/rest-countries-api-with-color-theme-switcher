@@ -32,16 +32,18 @@
   let search = data.search ?? "";
 </script>
 
-<main class="container mx-auto my-14">
-  <div class="flex justify-between mb-14">
+<div class="flex flex-wrap gap-14 justify-between sm:mb-14 mb-10">
+  <div class="w-full sm:w-2/5 min-w-[256px]">
     <SingleTextForm bind:text={search} action="?/search" name="search">
       <Search size="16" slot="icon" />
     </SingleTextForm>
-    <FilterDropdown options={regions} bind:selected={filterRegion} />
   </div>
-  <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-24">
-    {#each countries as country (country.cca3)}
-      <OverviewCard {country} />
-    {/each}
-  </div>
-</main>
+  <FilterDropdown options={regions} bind:selected={filterRegion} />
+</div>
+<div
+  class="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 sm:mx-0 mx-10 sm:gap-24 gap-12"
+>
+  {#each countries as country (country.cca3)}
+    <OverviewCard {country} />
+  {/each}
+</div>

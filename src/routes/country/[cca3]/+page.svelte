@@ -6,10 +6,8 @@
   export let data: PageData;
 </script>
 
-<div class="container element-body mx-auto my-16">
-  <a class="button mb-16" href="/">
-    <ArrowBack class="inline-block align-middle" />
-    <span class="align-middle">Back</span>
-  </a>
-  <CountryDetail country={data.country} />
-</div>
+<a class="button mb-16" href="/">
+  <ArrowBack class="inline-block align-middle" />
+  <span class="align-middle">Back</span>
+</a>
+<CountryDetail country={data.country} />

@@ -6,7 +6,7 @@
 </script>
 
 <form
-  class="w-2/5 min-w-[256px] flex rounded-md overflow-hidden font-normal text-light-input bg-light-element shadow-md shadow-light-input/10 focus-within:ring-1 ring-blue"
+  class="flex rounded-md overflow-hidden font-normal text-light-input bg-light-element shadow-md shadow-light-input/10 focus-within:ring-1 ring-blue"
   {action}
   on:submit
 >
