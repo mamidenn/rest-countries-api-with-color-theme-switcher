@@ -17,3 +17,5 @@
 .svelte-kit
 node_modules
 yarn-error.log
+
+.vercel
