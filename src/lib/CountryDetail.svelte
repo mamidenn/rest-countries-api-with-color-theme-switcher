@@ -1,4 +1,6 @@
 <script lang="ts">
+  import LinkButton from "$lib/LinkButton.svelte";
+
   import type { Country } from "$lib/Country";
 
   type CountryDetail = Pick<
@@ -74,9 +76,9 @@
       <ul class="flex flex-wrap gap-3">
         {#each country.borders as border (border.cca3)}
           <li>
-            <a class="button" href="/country/{border.cca3}/">
+            <LinkButton href="/country/{border.cca3}">
               {border.name.common}
-            </a>
+            </LinkButton>
           </li>
         {/each}
       </ul>

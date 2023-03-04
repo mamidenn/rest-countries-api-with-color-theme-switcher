@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const config = {
   content: ["./src/**/*.{html,js,svelte,ts}"],
-
+  darkMode: "class",
   theme: {
     colors: {
       "light-element": "hsl(0, 0%, 100%)",
@@ -12,6 +12,7 @@ const config = {
       "dark-bg": "hsl(207, 26%, 17%)",
       "dark-text": "hsl(0, 0%, 100%)",
       blue: "#2563eb",
+      transparent: "transparent",
     },
     fontFamily: {
       sans: ["Nunito", "sans-serif"],
@@ -22,6 +23,7 @@ const config = {
       bold: 800,
     },
     boxShadow: {
+      strong: "0 0 3px 3px rgb(0 0 0 / 0.1)",
       md: "0 0 3px 1px rgb(0 0 0 / 0.1)",
       lg: "0 1px 10px 0 rgb(0 0 0 / 0.05)",
     },

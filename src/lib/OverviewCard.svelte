@@ -9,7 +9,7 @@
 </script>
 
 <article
-  class="rounded-md shadow-lg bg-light-element overflow-hidden focus-within:ring-1 ring-blue"
+  class="rounded-md shadow-lg bg-light-element dark:bg-dark-element overflow-hidden focus-within:ring-1 ring-blue"
 >
   <a href={`/country/${country.cca3}`} class="block h-full">
     <img

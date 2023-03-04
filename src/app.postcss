@@ -3,30 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  html {
-    font-size: 14px;
-    @apply font-light;
-    @apply text-light-text;
-    @apply bg-light-bg;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.button {
-  @apply inline-block;
-  padding: 0.25em 1.5em;
-  border-radius: 0.25em;
-  @apply shadow-md;
-  @apply bg-light-element;
+html {
+  font-size: 14px;
+  @apply font-light;
+  @apply text-light-text;
+  @apply bg-light-bg;
 }
 
-.button:focus {
-  @apply ring-1;
-  @apply ring-blue;
+html.dark {
+  @apply text-dark-text;
+  @apply bg-dark-bg;
 }

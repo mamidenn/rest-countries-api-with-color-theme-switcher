@@ -6,8 +6,8 @@
 </script>
 
 <Dropdown
-  class="form-select border-0 font-normal text-start px-8 py-6 w-60 rounded-md text-light-input bg-light-element shadow-md shadow-light-input/10"
-  menuClass="mt-1 left-0 right-0 text-light-input bg-light-element rounded-md py-4 shadow-md shadow-light-input/10"
+  class="form-select border-0 font-normal text-light-input dark:text-dark-text bg-light-element dark:bg-dark-element text-start px-8 py-6 w-60 rounded-md shadow-md"
+  menuClass="mt-2 left-0 right-0 border-0 rounded-md py-4 text-light-input dark:text-dark-text bg-light-element dark:bg-dark-element shadow-md"
   placeholder="Filter by Region"
   {options}
   let:option
