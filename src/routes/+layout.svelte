@@ -1,9 +1,10 @@
 <script>
   import "../app.postcss";
   import Header from "$lib/Header.svelte";
-  import { browser } from "$app/environment";
+</script>
 
-  if (browser) {
+<svelte:head>
+  <script lang="ts">
     if (
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
@@ -13,8 +14,8 @@
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }
-</script>
+  </script>
+</svelte:head>
 
 <Header />
 <main class="container mx-auto sm:my-14 my-8 px-8">
