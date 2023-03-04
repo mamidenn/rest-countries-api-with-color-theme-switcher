@@ -11,6 +11,7 @@ const config = {
       "dark-element": "hsl(209, 23%, 22%)",
       "dark-bg": "hsl(207, 26%, 17%)",
       "dark-text": "hsl(0, 0%, 100%)",
+      blue: "#2563eb",
     },
     fontFamily: {
       sans: ["Nunito", "sans-serif"],

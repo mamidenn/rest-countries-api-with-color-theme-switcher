@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Dev Server",
+      "command": "yarn",
+      "type": "shell",
+      "args": ["dev", "--open"],
+      "runOptions": {
+        "instanceLimit": 1
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}

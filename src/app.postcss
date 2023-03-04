@@ -4,10 +4,23 @@
 @tailwind utilities;
 
 @layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   html {
     font-size: 14px;
-    @apply font-normal;
-    background-color: hsl(0, 0%, 98%);
-    color: hsl(200, 15%, 8%);
+    @apply font-light;
+    @apply text-light-text;
+    @apply bg-light-bg;
   }
+}
+
+.button {
+  @apply inline-block;
+  @apply px-8;
+  @apply py-1;
+  @apply shadow-md;
 }
